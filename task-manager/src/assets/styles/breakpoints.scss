@@ -1,0 +1,32 @@
+//---->> UTILS-SIZE -> CUSTOM SIZES
+    $max-width                  :1400px;
+    $lg-desktop                 : 1200px;
+    $lg-tablet                  : 800px;
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    $h-lg-desktop               : $max-width - 400px ;
+    $lg-desktop                 : 1200px;
+    $lg-tablet                  : 800px;
+//=====>> BREAKPOINTS
+        $minw-lg-desktop             : "min-width :" + $lg-desktop;
+        $minw-lg-tablet              : "min-width :" + $lg-tablet;
+        $minw-lg-especial            : "min-width: 260px";
+        //----------------->
+        $maxw-lg-desktop             : "max-width :" + $lg-desktop;
+        $maxw-lg-tablet              : "max-width :" + $lg-tablet;
+        $maxv-lg-especial            : "max-width: 260px";
+    //===========================================================================</>
+        $minh-lg-desktop             : "min-height :" + $lg-desktop;
+        $minh-lg-tablet              : "min-height :" + $lg-tablet;
+        $minh-lg-especial            : "min-height: 260px";
+        //----------------->
+        $maxh-lg-desktop             : "max-height :" + $lg-desktop;
+        $maxh-lg-tablet              : "max-height :" + $lg-tablet;
+        $maxh-lg-especial            : "max-height: 260px";
+//======>> OTHERS
+    @mixin center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+//---<<>>
+

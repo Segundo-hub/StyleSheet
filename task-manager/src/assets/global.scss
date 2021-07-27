@@ -1,0 +1,203 @@
+@use "sass:string";
+
+:root{
+
+//---->> COLOR-THEME -> BROWN
+	--grey-dark                : #252525;
+    --grey-primary             : #343434;
+    --grey-100                 : #434343;
+    --grey-200                 : #525252;
+    --grey-300                 : #616161;
+    --grey-400                 : #707070;
+    --grey-500                 : #808080;
+    --grey-600                 : #8e8e8e;
+    --grey-700                 : #9d9d9d;
+    --grey-800                 : #acacac;
+    --grey-light               : #f0f0f0;
+//---<<>>
+
+//---->> COLOR-THEME -> BROWN
+	--brown-dark                : #222d33;
+    --brown-primary             : #303f47;
+    --brown-100                 : #3e515b;
+    --brown-200                 : #4b6370;
+    --brown-300                 : #597584;
+    --brown-400                 : #678798;
+    --brown-500                 : #7b97a6;
+    --brown-600                 : #8fa7b4;
+    --brown-700                 : #a4b7c1;
+    --brown-800                 : #b8c7cf;
+    --brown-light               : #ccd7dd;
+    --browm-magical             : #405367;
+//---<<>>
+
+//---->> COLOR-THEME -> ORANGE
+	--orange-dark               : #7c481d;
+    --orange-primary            : #985823;
+    --orange-100                : #b3682a;
+    --orange-200                : #cf7730;
+    --orange-300                : #d58a4c;
+    --orange-400                : #dc9c67;
+    --orange-500                : #e2ae83;
+    --orange-600                : #e9c09e;
+    --orange-700                : #efd2ba;
+    --orange-800                : #f5e4d6;
+    --orange-light              : #fcf6f1;
+//---<<>>
+
+//---->> COLOR-THEME -> CYAN
+	--cyan-dark                : #006055;
+    --cyan-primary             : #007567;
+    --cyan-100                 : #008a7a;
+    --cyan-200                 : #009f8d;
+    --cyan-300                 : #00b5a0;
+    --cyan-400                 : #00cab3;
+    --cyan-light               : #80fff0;
+//---<<>>
+
+    --bg-navs                  : var(--orange-light);
+
+//---->> UTILS-SIZE -> CUSTOM SIZES
+	--max-width                : 1400px;
+    --grid-gap                  : 2rem;
+    --height-nav--top           : 4rem;
+    --width-nav--left           : 17rem;
+    //====> BREAKPOINTS
+        --lg-desktop           : 1200px;
+        --lg-tablet            : 800px;
+        --lg-especial          : 250px;
+
+//---<<>>
+}
+
+
+.dark-theme{
+//---->> COLOR-THEME -> BROWN
+	--grey-dark                : #f0f0f0;
+    --grey-primary             : #acacac ;
+    --grey-100                 : #9d9d9d ;
+    --grey-200                 : #8e8e8e ;
+    --grey-300                 : #808080 ;
+    --grey-400                 : #707070 ;
+    --grey-500                 : #616161 ;
+    --grey-600                 : #525252 ;
+    --grey-700                 : #434343 ;
+    --grey-800                 : #343434 ;
+    --grey-light               : #21313a ;
+    --brown-dark               : #405367 ;
+    --brown-primary            : #ccd7dd ;
+    --brown-100                : #b8c7cf ;
+    --brown-200                : #a4b7c1 ;
+    --brown-300                : #8fa7b4 ;
+    --brown-400                : #7b97a6 ;
+    --brown-500                : #678798 ;
+    --brown-600                : #597584 ;
+    --brown-700                : #4b6370 ;
+    --brown-800                : #3e515b ;
+    --brown-light              : #303f47 ;
+    --browm-magical            : #222d33 ;
+    --orange-dark              : #fcf6f1 ;
+    --orange-primary           : #f5e4d6 ;
+    --orange-100               : #efd2ba ;
+    --orange-200               : #e9c09e ;
+    --orange-300               : #e2ae83 ;
+    --orange-400               : #dc9c67 ;
+    --orange-500               : #d58a4c ;
+    --orange-600               : #cf7730 ;
+    --orange-700               : #b3682a ;
+    --orange-800               : #985823 ;
+    --orange-light             : #7c481d ;
+}
+
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-color: var(--brown-light);
+}
+
+a {
+	text-decoration: none;
+    transition: color .5s ease-out;
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+input{
+    outline: none;
+    border: none;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+li{
+    list-style: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+
+::-webkit-scrollbar{
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+    &-thumb{
+        background-color: grey;
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+        border: 2px solid var(--brown-light);
+        outline: 2px solid var(--brown-light);
+        &:hover{
+            background-color: silver;
+        }
+    }
+    &-button{
+        background-color: transparent;
+        height: 5px;
+        width: 5px;
+    }
+}
+
+[role="button"]{
+    cursor: pointer;
+}

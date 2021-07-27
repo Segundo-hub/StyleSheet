@@ -1,0 +1,183 @@
+@import "./breakpoints.scss" ;
+
+.ui_grid{
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: var(--grid-gap);
+    width: 100%;
+    &.rw_gap{
+        row-gap: var(--grid-gap);
+    }
+}
+
+@media screen and($minw-lg-desktop){
+    @for $i from 1 through 14 {
+        .lg_grid_#{$i} {
+            grid-template-columns: repeat(#{$i} ,calc(#{100/$i}% - var(--grid-gap)* #{$i - 1}/#{$i}));
+        }
+        .mi_grid>.lg_cols_#{$i} {
+            grid-column-end: span #{$i};
+        }
+    }   
+}
+
+.ui_flex{
+    display: flex;
+    width: 100%;
+    &-max{
+        display: flex;
+        max-width: var(--max-width);
+        @include center;
+    }
+    &_center{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.container{
+    max-width: var(--max-width);
+    @include center;
+}
+.grand-view{
+    height: 1000px;
+}
+.nav-top{
+    border-top: 1px solid var(--orange-800) !important;
+}
+//=======>>> MODULES
+
+.task--card{
+    color: var(--grey-100);
+    border-radius: 2.5px;
+    background-color: var(--browm-magical);
+    padding: .5rem 1rem;
+    @include center;
+    max-height: 14rem;
+}
+.wd--80{
+    width: 80%;
+}
+
+.scroll--y{
+    overflow-y: scroll;
+}
+.scroll--x{
+    overflow-x: auto;
+}
+
+.nav-links{
+    color: var(--grey-primary);
+    font-weight: 500;
+    padding: 0 2rem;
+}
+.input-control{
+    width: 50%;
+    padding: .65rem;
+    display: inline-block;
+}
+.btn{
+    font-weight: 500;
+    padding: .5rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .2s ease-in-out;
+    &-info{
+        background-color: var(--cyan-100);
+        color: var(--brown-light);
+        &:hover{
+            background-color: transparent;
+            border-color:  var(--cyan-100);
+            color: var(--brown-dark);
+        }
+    }
+    &-succes{
+        background-color: var(--orange-100);
+        color: var(--brown-light);
+        &:hover{
+            background-color: transparent;
+            border-color: var(--orange-100);
+            color: var(--brown-dark);
+        }
+    }
+    &-dashed{
+        border: 2px dashed var(--brown-600);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: var(--brown-800);
+        display: flex;
+        justify-content: center;
+        color: var(--orange-200);
+        align-items: center;
+    }
+    &-block{
+        width: 50%;
+        @include center;
+    }
+}
+.inline--center{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.absolute--center{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: var(--height-nav--top);
+    align-items: center;
+}
+
+#modal{
+    position: fixed;
+    top: 0;
+    left: var(--width-nav--left);
+    right: 0;
+    z-index: 100;
+    bottom: 40%;
+    background-color: transparent;
+}
+
+@keyframes modal{
+    from{ opacity: 0; transform: translateY(1.5rem); }
+    to{ opacity: 1; transform: translateY(0);}
+}
+
+
+/* ------------------------------------------- */
+/*                  Forms                      */
+/* ------------------------------------------- */
+
+.center{
+    text-align: center;
+}
+.user--input{
+    margin: .75rem auto;
+}
+.input-block{
+    display: block;
+    width: 100%;
+}
+
+.link-info{
+    color: var(--orange-500);
+    text-decoration: underline;
+}
+
+
+/* ------------------------------------------- */
+/*                  Utils                      */
+/* ------------------------------------------- */
+
+.s-spy-1{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+hr.separator{
+    margin: 0;
+    border: none;
+    border-bottom: thin solid var(--brown-light);
+}
+
